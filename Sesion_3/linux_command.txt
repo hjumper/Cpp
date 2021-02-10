@@ -1,0 +1,68 @@
+NOTE
+***************************
+touch command.sh
+vim command.sh
+<echo "hello WOlrd">
+cat command.sh  // read file
+1
+sh command.sh
+2
+chmod +x command.sh //change command.sh to excutable file
+./command.sh
+
+Complication flags
+-std=c++11 -o/-Wall/-Wextra/-Werror test [src]
+
+Optimization options:
+-o0 no Optimization
+-o3 / -ofast full Optimization
+
+## goolg search compiler explorer 
+
+keep debbing symbols: -g
+
+Debuging tools: gdb
+use gdbgui X to debug
+**********************************
+Functions create a scope
+Single return value from a fucntion
+****************************
+ERROR: Segemetation fault: you try to access some memory that you shouldn't try to access
+ERROR: discards qualifiers: you forgot const somewhere or some with const:
+int& a=4;(refs cannot be assigned with const value)
+FUnktion does the single thing
+**************************
+Pass const refs to the function
+Most of the function you should develop in the way that get const referenz(const <type>& { var }) 
+unless you explictly inspect the thing to change, in other words, AVOID USING NON-CONST refs
+void DoSmith(const std::string& huge_string);
+***************************
+Funktion Overload Compiler from arguements:
+string Func(int num) {return "int";}
+string Func(const string& str){return "string";}
+
+Default parameter allowed.
+Only use when readability to improve
+
+declaration in head .h
+implementation in function .cpp
+'tool.h'
+#pragma once //ensure file is included only once. 
+void MakeItFunny();
+void MakeItRain();
+
+#include 'tool.h'
+
+c++ -c test.cpp -o test.o // (gcc) test.o is a module
+c++ main.cpp test.o -o main
+./main
+
+Use CMake to simpilty the build
+ **********************************
+ Build proccess
+ CMakeLists.txt defines the whole build (CMake read it sequentially)
+ 1. cd <project_folder>
+ 2. mkdir build
+ 3. cd build
+ 4. cmake...
+ 5. make -j2 #pass your number of cores here
